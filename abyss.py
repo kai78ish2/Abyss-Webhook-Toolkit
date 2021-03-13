@@ -8,7 +8,7 @@ print("Loaded.")
 
 def main():
     while True:
-        print("Command list (Just type a number and press enter):")
+        print("Command list:")
         option = input('''
         [0] Sets the webhook URL
         [1] Webhook message spammer
@@ -18,20 +18,19 @@ def main():
         [5] Say one message
         [6] Checks the version
         [7] Posts an ad for this webhook console
-        [8] Pings everyone... :troll:
-        [9] Sends sus!1!!!
+        [8] Gnome the chat
         ==> ''')
 
         version = "V1.1"
 
         if option == "0":
             hook = input("Webhook URL: ")
-            data = {"content": "Success, connected to this webhook. Thanks for using Theo's Webhook Console by TheoTheEpic#0069"}
+            data = {"content": ""}
             headers = {"content-type": "application/json"}
             print("Setting the webhook url to: ",hook)
             time.sleep(0.5)
             r = requests.post(hook, json=data,headers=headers)
-            print("Success! Connected to the webhook: ",hook)
+            print("Success Connected to the webhook: ",hook)
 
         
         if option == "1":
@@ -43,7 +42,7 @@ def main():
             data = {"content": message}
             time.sleep(wait)
             print("Starting...")
-            print("Started!")
+            print("Started")
 
             for _ in range(amount):
                 r = requests.post(hook, json=data,headers=headers)
@@ -83,10 +82,10 @@ def main():
         if option == "6":
             print("Loading version...")
             time.sleep(0.5)
-            print("Version: ",version," (You may need to download the latest version at https://github.com/TheoTheEpic/Theos-Webhook-Console)")
+            print("Version: ",version," (You may need to download the latest version at https://github.com/kai78ish2/Abyss-Webhook-Toolkit")
 
         if option == "7":
-            data = {"content": "Get Theo's webhook console today! At: https://github.com/TheoTheEpic/Theos-Webhook-Console"}
+            data = {"content": "Get Abyss Webhook Toolkit At: https://github.com/kai78ish2/Abyss-Webhook-Toolkit"}
             headers = {"content-type": "application/json"}
             print("Posting ad...")
             time.sleep(0.5)
@@ -94,23 +93,12 @@ def main():
             print("Posted")
 
         if option == "8":
-            data = {"content": "@everyone :sunglasses:"}
+            data = {"content": "Free Discord Nitro! https://media.discordapp.net/attachments/257902725327618058/527149504395476992/nitro_gift.png"}
             headers = {"content-type": "application/json"}
-            print("Sending @everyone ping...")
+            print("Sending gnomage")
             time.sleep(0.5)
             r = requests.post(hook, json=data,headers=headers)
-            print("Sent @everyone ping!")
-
-        if option == "9":
-         data = {"content": "When the imposter is sus :flushed:"}
-         data2 = {"content": "https://media.discordapp.net/attachments/804662853059608627/820368810942398464/sus2.png"}
-         headers = {"content-type": "application/json"}
-         print("Sending sus :flushed:")
-         time.sleep(0.5)
-         r = requests.post(hook, json=data,headers=headers)
-         r = requests.post(hook, json=data2,headers=headers)
-         print("Sent sus :flushed:")
-
+            print("Sent")    
 
 if __name__ == "__main__":
   main()
